@@ -1,66 +1,166 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Informasi Manajemen Aset Sekolah (SIMASET Sekolah)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+SIMASET adalah aplikasi web untuk mendata dan mengelola aset sekolah seperti tanah, bangunan, ruangan, dan inventaris barang. Dibangun menggunakan Laravel 12, aplikasi ini ditujukan untuk membantu sekolah mengelola aset secara terstruktur dan profesional.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 Ringkasan Proyek
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Proyek ini mengajarkan bagaimana:
+- Merancang database aplikasi.
+- Mengimplementasikan CRUD (Create, Read, Update, Delete).
+- Mengelola relasi antar entitas.
+- Membuat sistem login berbasis role.
+- Membangun aplikasi web dengan Laravel.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🚀 Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. Manajemen Aset
+- Data Tanah  
+- Data Bangunan (relasi ke Tanah)  
+- Data Ruangan (relasi ke Bangunan)  
+- Kategori Barang  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 2. Inventaris Barang
+- Kode inventaris otomatis  
+- Kondisi barang  
+- Lokasi barang  
+- Tahun pengadaan  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3. Pelaporan
+- Cetak barang per ruangan  
 
-## Laravel Sponsors
+### 4. Manajemen Pengguna
+- Admin  
+- Petugas Inventaris  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠️ Teknologi
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- Laravel 12  
+- PHP 8+  
+- MySQL / MariaDB  
+- Bootstrap 5 / TailwindCSS  
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 💻 **Cara Instalasi (Lengkap & Mudah Diikuti)**
 
-## Code of Conduct
+1.Persiapan awal
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Pastikan sudah menginstal:
+- **XAMPP** (PHP ≥ 8.1)
+- **Composer**
+- **Node.js & NPM**
+- **Git**
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2.Clone projeknya
+Jika project berasal dari GitHub:
 
-## License
+```bash
+git clone https://github.com/username/simaset-sekolah.git
+cd simaset-sekolah
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3.Install Dependensi Backend (Composer)
+composer install
+
+4.Install Dependensi Frontend (npm)
+npm install
+Build asset:
+npm run build
+Atau jika ingin mode development:
+npm run dev
+
+5. Konfigurasi File .env
+cp .env.example .env
+Edit setting database:
+DB_DATABASE=simaset
+DB_USERNAME=root
+DB_PASSWORD=
+Buat database di phpMyAdmin dengan nama simaset.
+
+6.Generate Key Laravel
+php artisan key:generate
+
+7. Migrasi Database
+php artisan migrate
+Jika kamu punya seeder (opsional):
+php artisan db:seed
+
+8. Menjalankan Server
+php artisan serve
+Akses aplikasi di:
+
+➡️ http://localhost:8000
+
+9. Login Awal (Jika pakai seeder)
+1.role:Admin
+2.Email kita sendiri seperti ini contoh:admin@simaset.com
+3.Password nya menggunakan password kita sendiri, disini contohnya:admin123
+
+ERD (Struktur Database)
+erDiagram
+    tanah {
+        int id PK
+        string nama_tanah
+        string kode_tanah
+        string luas
+        string no_sertifikat
+    }
+    bangunan {
+        int id PK
+        string nama_bangunan
+        string kode_bangunan
+        int tanah_id FK
+    }
+    ruangan {
+        int id PK
+        string nama_ruangan
+        string kode_ruangan
+        int bangunan_id FK
+    }
+    kategori {
+        int id PK
+        string nama_kategori
+    }
+    barang {
+        int id PK
+        string nama_barang
+        string kode_inventaris
+        int kategori_id FK
+        int ruangan_id FK
+        int tahun_pengadaan
+        string sumber_dana
+        string kondisi
+    }
+    users {
+        int id PK
+        string name
+        string email
+        string password
+        string role
+    }
+
+    tanah ||--o{ bangunan : memiliki
+    bangunan ||--o{ ruangan : memiliki
+    ruangan ||--o{ barang : berisi
+    kategori ||--o{ barang : dikelompokkan
+
+link Repository projek Ustudz APP -> https://github.com/muhamad3114-lab/ustudz-app
+
+hasil record saya dibawah 
+https://github.com/user-attachments/assets/f6a718ab-6e70-41bb-9ea7-74b1bed62c18
+
+
+
+
+
+
+
+
+
