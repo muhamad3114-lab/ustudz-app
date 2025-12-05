@@ -49,7 +49,7 @@ Proyek ini mengajarkan bagaimana:
 
 # 💻 **Cara Instalasi (Lengkap & Mudah Diikuti)**
 
-1.Persiapan awal
+1. Persiapan awal
 
 Pastikan sudah menginstal:
 - **XAMPP** (PHP ≥ 8.1)
@@ -59,49 +59,62 @@ Pastikan sudah menginstal:
 
 ---
 
-2.Clone projeknya
+2. Clone projeknya
 Jika project berasal dari GitHub:
 
 ```bash
 git clone https://github.com/username/simaset-sekolah.git
 cd simaset-sekolah
+`````
 
-3.Install Dependensi Backend (Composer)
+3. Install Dependensi Backend (Composer)
+```bash
 composer install
+```
 
-4.Install Dependensi Frontend (npm)
+4. Install Dependensi Frontend (npm)
+```bash
 npm install
 Build asset:
 npm run build
 Atau jika ingin mode development:
 npm run dev
+```
 
 5. Konfigurasi File .env
-cp .env.example .env
-Edit setting database:
+```bash
 DB_DATABASE=simaset
 DB_USERNAME=root
 DB_PASSWORD=
+```
 Buat database di phpMyAdmin dengan nama simaset.
 
-6.Generate Key Laravel
+6. Generate Key Laravel
+```bash
 php artisan key:generate
+```
 
 7. Migrasi Database
+```bash
 php artisan migrate
 Jika kamu punya seeder (opsional):
 php artisan db:seed
+```
 
 8. Menjalankan Server
+```bash
 php artisan serve
+```
 Akses aplikasi di:
 
 ➡️ http://localhost:8000
 
 9. Login Awal (Jika pakai seeder)
+```
 1.role:Admin
 2.Email kita sendiri seperti ini contoh:admin@simaset.com
 3.Password nya menggunakan password kita sendiri, disini contohnya:admin123
+```
 
 ERD (Struktur Database)
 erDiagram
@@ -154,7 +167,10 @@ erDiagram
 link Repository projek Ustudz APP -> https://github.com/muhamad3114-lab/ustudz-app
 
 hasil record saya dibawah 
-https://github.com/user-attachments/assets/f6a718ab-6e70-41bb-9ea7-74b1bed62c18
+
+https://github.com/user-attachments/assets/37c247c0-143e-4756-9c4e-45508dbff979
+
+
 
 
 
